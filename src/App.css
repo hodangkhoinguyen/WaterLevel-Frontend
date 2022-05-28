@@ -1,0 +1,15 @@
+// add all CSS here!
+
+main {
+  
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+}
+
+#Red {
+  background-color: red;
+  
+}
