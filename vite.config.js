@@ -13,7 +13,7 @@ export default {
     },
   proxy: {
       '/query': {
-        target: 'https://WaterLevel-Backend-ecs162-s22-66.ecs162-s22.repl.co',
+        target: 'https://waterlevel-backend-ecs162-s22-66.ecs162-s22.repl.co',
         changeOrigin: true,
         secure: false,
         ws: true

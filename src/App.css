@@ -1,7 +1,25 @@
-// add all CSS here!
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: regular;    
+  font-size: 16px;
+  width: 100%;
+  --lightBlue: rgb(120, 199, 227);
+  --greenishBlue: rgb(66, 145, 152);
+}
 
-main {
-  
+header {
+  width: 100%;
+}
+
+main {  
+  display: flex;
+  flex-direction: column;  
+  width: 82%;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 28px;
 }
 
 figure {
@@ -9,7 +27,66 @@ figure {
   flex-direction: column;
 }
 
-#Red {
-  background-color: red;
-  
+figcaption {
+  font-size: 12px;
+}
+
+button {
+  background-color: var(--greenishBlue);
+  color: white;
+  font-weight: medium;
+  height: 45px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.available {  
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tile > * {
+  margin: 10px 0;
+}
+
+#title {  
+  width: 100%;  
+  color: white;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+#stripe {
+  border: none;
+  position: absolute;
+  height: 150px;
+  width: 100%;
+  background-color: var(--greenishBlue);
+  z-index: -1;
+}
+
+#tile1 {
+  width: 62%;
+}
+
+#tile2 {
+  width: 34%;
+}
+
+#Red {  
+  height: 250px;
+  display: flex;
+  align-items: center;
 }
