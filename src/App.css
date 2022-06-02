@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
   font-family: 'Inter', sans-serif;
-  font-weight: regular;    
+  font-weight: 400;    
   font-size: 16px;
   width: 100%;
   --lightBlue: rgb(120, 199, 227);
@@ -14,11 +16,15 @@ header {
 main {  
   display: flex;
   flex-direction: column;  
-  width: 82%;
+  width: 85%;
+}
+
+a {
+  color:  rgb(60, 150, 255); 
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 28px;
 }
 
@@ -32,11 +38,11 @@ figcaption {
 }
 
 button {
-  background-color: var(--greenishBlue);
+  background-color: rgb(66, 145, 152);
   color: white;
-  font-weight: medium;
+  font-weight: 500;
   height: 45px;
-  width: 120px;
+  width: 140px;
   border-radius: 10px;
 }
 
@@ -60,6 +66,17 @@ img {
   margin: 10px 0;
 }
 
+#tile2 > * {
+  margin-bottom: 0;
+}
+
+.seeMore {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;  
+}
+
 #title {  
   width: 100%;  
   color: white;
@@ -73,7 +90,7 @@ img {
   position: absolute;
   height: 150px;
   width: 100%;
-  background-color: var(--greenishBlue);
+  background-color: rgb(66, 145, 152);
   z-index: -1;
 }
 
@@ -85,8 +102,50 @@ img {
   width: 34%;
 }
 
-#Red {  
-  height: 250px;
-  display: flex;
-  align-items: center;
+#tile3 {
+  width: 40%;
+}
+
+#tile4 {
+  width: 45%;
+}
+
+@media (max-width: 900px) {
+  main {  
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  .available {
+    flex-direction: column-reverse;
+  }
+
+  .seeMore {
+    flex-direction: column-reverse;
+  }
+
+  #title { 
+    justify-content: center;
+  }
+  
+  #tile1 {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  #tile2 {
+    width: 100%;
+  }
+
+  #tile4 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {  
+  main {
+    width: 75%;
+  }
 }

@@ -6,7 +6,6 @@ import React, {useEffect} from 'react';
 
 const useAsyncFetch = function (url, data, thenFun, catchFun ) {
   console.log("in useAsyncFetch");
-  
   let params = {
     method: 'POST', 
     headers: {'Content-Type': 'application/json'},
@@ -36,7 +35,7 @@ const useAsyncFetch = function (url, data, thenFun, catchFun ) {
   useEffect(function () {
     console.log("Calling fetch");
     fetchData();
-  }, []);
+  }, [data]);
 
 }
 
