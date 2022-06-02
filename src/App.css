@@ -50,11 +50,22 @@ img {
   width: 100%;
 }
 
+label {
+  font-weight: 600;
+  color: rgb(66, 145, 152);
+}
+
 .container {
   width: 100vw;
   display: flex;
   justify-content: center;
 }
+
+#chart-container {
+  height: 450px;
+  width: 100%;
+}
+
 
 .available {  
   margin-top: 100px;
@@ -85,6 +96,14 @@ img {
   align-items: center;
 }
 
+#monthBtn {
+  margin-top: 15px;
+  width: 250px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px 15px;
+}
+
 #stripe {
   border: none;
   position: absolute;
@@ -103,11 +122,15 @@ img {
 }
 
 #tile3 {
-  width: 40%;
+  width: 45%;
 }
 
 #tile4 {
   width: 45%;
+}
+
+#changeDate {
+  margin-top: 50px;  
 }
 
 @media (max-width: 900px) {
@@ -118,11 +141,13 @@ img {
   h1 {
     text-align: center;
   }
+  
   .available {
     flex-direction: column-reverse;
   }
 
-  .seeMore {
+  .seeMore {    
+    margin-top: 80px;
     flex-direction: column-reverse;
   }
 
@@ -130,17 +155,18 @@ img {
     justify-content: center;
   }
   
-  #tile1 {
+  #tile1, #tile2, #tile3 {
     margin-top: 50px;
-    width: 100%;
-  }
-
-  #tile2 {
     width: 100%;
   }
 
   #tile4 {
     width: 100%;
+    margin-bottom: 50px;
+  }
+
+  #chart-container {
+    height: 100%;
   }
 }
 

@@ -13,14 +13,13 @@ function App() {
   function yearChange(newYear) {
       setDate({year: newYear, month: date.month });
       let textBtn = document.getElementById("monthBtn");
-      console.log(textBtn);
-      textBtn.textContent = date.month+"/"+date.year;
+      textBtn.textContent = displayDate(date);
     }
 
   function monthChange(newMonth){
       setDate({month: newMonth, year:date.year});
       let textBtn = document.getElementById("monthBtn");
-      textBtn.textContent = date.month+"/"+date.year;
+      textBtn.textContent = displayDate(date);
     }
   
   function seeAction() {    
@@ -80,7 +79,7 @@ function SeeMore(props) {
     updateView(!view);
   }
 
-  let currDate = props.date.month+"/"+props.date.year;
+  let currDate = displayDate(props.date);
   
   if (display) {  
     return (
@@ -89,8 +88,11 @@ function SeeMore(props) {
         <div className="tile" id="tile4">
            <p>
 Here's a quick look at some of the data on reservoirs from the <a href="https://cdec.water.ca.gov/index.html">California Data Exchange Center</a>, which consolidates climate and water data from multiple federal and state government agencies, and  electric utilities.  Select a month and year to see storage levels in the eleven largest in-state reservoirs.
-          </p>  
-          <div id="monthBtn" onClick={monthBtn}>{currDate}</div>
+          </p>
+          <div id="changeDate">
+            <label>Change month</label>
+            <div id="monthBtn" onClick={monthBtn}>{currDate}</div>
+          </div>
           <MonthPicker
             view = {view}
             date = {props.date}
@@ -137,24 +139,7 @@ function MonthPicker(props) {
   }
 }
 
-function LakeChart(props) {
-  // let lakes = {
-  //   "Shasta" : 4552000,
-  //   "Oroville" : 3537577,
-  //   "Trinity Lake" : 2447650,
-  //   "New Melones" : 2400000,
-  //   "San Luis" : 2041000,
-  //   "Don Pedro" : 2030000,
-  //   "Berryessa" : 1602000
-  // };
-  
-  // const nicknames = new Map();
-  // let count = 0;
-  // for (let i in lakes) {
-  //   nicknames.set(count, i);
-  //   count++;
-  // }
-  
+function LakeChart(props) {  
   if (props.lakes) {
     let n = props.lakes.length;
 
@@ -165,8 +150,8 @@ function LakeChart(props) {
     for (let i=0; i < n; i++) {
      // let lake = nicknames.get(i);
       //capacity.data.push(lake);
-      capacity.data[i] /= 10000; 
-      storage.data.push(props.lakes[i] / 10000);
+      capacity.data[i] /= 100000; 
+      storage.data.push(props.lakes[i] / 100000);
      // labels.push(lake);
     }
   let userData = {};
@@ -175,10 +160,6 @@ function LakeChart(props) {
 
 let options = {
   plugins: {
-    //title: {
-     // display: true,
-      //text: 'Sticker vs. Middle Income Family Prices',
-    //},
     legend: {
       display: false,
     },
@@ -243,5 +224,25 @@ function LakeDisplay(props) {
       loading...
     </p>);
   }
+}
+
+function displayDate(currDate) {
+  let month = "";
+  switch(currDate.month) {
+    case 1: month = "January"; break;
+    case 2: month = "February"; break;
+    case 3: month = "March"; break;
+    case 4: month = "April"; break;
+    case 5: month = "May"; break;
+    case 6: month = "June"; break;
+    case 7: month = "July"; break;
+    case 8: month = "August"; break;
+    case 9: month = "September"; break;
+    case 10: month = "October"; break;
+    case 11: month = "November"; break;
+    default: month = "December"; break;
+  }
+
+  return month + " " + String(currDate.year);
 }
 export default App;
