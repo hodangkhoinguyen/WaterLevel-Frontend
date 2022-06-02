@@ -151,7 +151,10 @@ function LakeChart(props) {
      // let lake = nicknames.get(i);
       //capacity.data.push(lake);
       capacity.data[i] /= 100000; 
-      storage.data.push(props.lakes[i] / 100000);
+      if (props.lakes[i] < 0) 
+        storage.data.push(0);
+      else
+        storage.data.push(props.lakes[i] / 100000);
      // labels.push(lake);
     }
   let userData = {};
